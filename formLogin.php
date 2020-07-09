@@ -29,7 +29,7 @@
 	
     <title>Bienvenido</title>
     </head>
-    <body background="img/background.png" class="img-fluid" alt="Responsive image" style="background-repeat: no-repeat; background-position: center center; background-size: cover" style="height: 100%"><br>
+    <body background="img/login-img.jpg" class="img-fluid" alt="Responsive image" style="background-repeat: no-repeat; background-position: center center; background-size: cover" style="height: 100%"><br>
     <div class="container">
     <div class="main">
     <h2></h2>
@@ -53,7 +53,7 @@
 				echo "<br>";
 				echo '<span class="pull-center "><img src="icons/status/security-low.png"  class="img-reponsive img-rounded"><strong> Usuario Bloqueado. Contacte al Administrador.</strong>';
 				echo "</div>";
-				echo '<a href="index.html"><br><br><button type="submit" class="btn btn-primary">Aceptar</button></a>';	
+				echo '<meta http-equiv="refresh" content="5;URL=http:logout.php "/>';
 				exit;
 			}
 
@@ -85,7 +85,7 @@
 				echo '<span class="pull-center "><img src="icons/status/dialog-warning.png"  class="img-reponsive img-rounded"> Usuario o Contraseña Incorrecta. Reintente Por Favor....';
 				//echo "Usuario o Contraseña Incorrecta. Reintente Por Favor...";
 				echo "</div>";
-				echo '<a href="index.html"><br><br><button type="submit" class="btn btn-primary">Aceptar</button></a>';	
+				echo '<meta http-equiv="refresh" content="5;URL=http:logout.php "/>';
 				}
 	
 			

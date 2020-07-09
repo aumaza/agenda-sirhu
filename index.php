@@ -223,7 +223,7 @@
   <div class="container">
   <div class="row">
   <div class="col-sm-12">
-  <form>
+
      <form action="formLogin.php" method="POST">
   <div class="form-group">
     <label for="usuario">Usuario:</label>

@@ -1,3 +1,9 @@
 #tablas
 
 create table usuarios (id int(11) auto_increment primary key, nombre varchar(30) binary not null, user varchar(15) binary not null, password varchar(10) binary not null, role int(1) default 1 not null)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+create table contactos (id int(11) auto_increment primary key, nombre varchar(25) not null, apellido varchar(25) not null, email varchar(60) not null, telefono1 varchar(10) not null, telefono2 varchar(10) not null, movil varchar(10) not null, fechaNacimiento date not null, oficina varchar(50) not null, cargo varchar(60) not null, organismo varchar(70) not null, direccion varchar(80) not null)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+load data local infile '/var/www/htdocs/agenda-sirhu/docs/contactos.csv' into table contactos fields terminated by ',' enclosed by '"' lines terminated by '\r\n' (nombre,apellido,email,telefono1,telefono2,movil,fechaNacimiento,oficina,cargo,organismo,direccion);
+
+
+
