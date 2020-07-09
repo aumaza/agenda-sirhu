@@ -133,7 +133,7 @@
       </div> 
     </div>
     <div class="col-sm-8 text-left"> 
-      <h1>Bienvenido <?php echo $nombre ?></h1>
+      <h1>Bienvenido/a <?php echo $nombre ?></h1>
       <p>Desde la Aplicación Agenda-Sirhu podrá consultar los contactos como también gestionar su Calendario</p>
       <hr><br>
    <?php
