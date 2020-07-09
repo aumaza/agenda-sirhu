@@ -245,7 +245,7 @@
   <div class="row">
     <div class="col-sm-8">
       <h2>Sobre el Sirhu</h2>
-      <h4>SIRHU</h4><br>
+      <h4>SIRHU - Sistema Integrado de Recursos Humanos</h4><br>
       <p>La Dirección de Presupuesto y Gastos en Personal, lleva adelante el control y análisis de los gastos en materia de todo lo referente a gastos en personal de la Administración Central</p>
       </div>
     <div class="col-sm-4">
@@ -287,7 +287,7 @@
   </div>
   <div class="row slideanim">
     <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-success text-center">
+      <div class="panel panel text-center">
         <div class="panel-heading">
           <h1>Jorge Caruso</h1>
         </div>
@@ -301,7 +301,7 @@
       </div>      
     </div>     
     <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-success text-center">
+      <div class="panel panel text-center">
         <div class="panel-heading">
           <h1>Carlos Traverso</h1>
         </div>
@@ -315,7 +315,7 @@
       </div>      
     </div>       
     <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-success text-center">
+      <div class="panel panel text-center">
         <div class="panel-heading">
           <h1><strong>Alejandro Ronald Krebs</strong></h1>
         </div>
@@ -339,6 +339,7 @@
       <h3>Formulario para Blanquear Password</h3>
       <p>Si olvidaste tu password</p>
       <p>Ingresá los datos que te solicitamos en el formulario</p>
+      <p>Recordá cambiar tu Password nuevamente una vez que vuelvas a ingresar</p>
       <p>Muchas Gracias!</p>
     </div>
     <div class="col-sm-7 slideanim">
@@ -347,14 +348,7 @@
         <div class="col-sm-6 form-group">
           <input class="form-control" id="name" name="usuario" placeholder="usuario_organismo" type="text" required>
         </div><br><br>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="password" name="pass1" placeholder="Password" type="password" required>
-        </div><br><br>
-         <div class="col-sm-6 form-group">
-          <input class="form-control" id="password" name="pass2" placeholder="Repita Password" type="password" required>
-        </div>
-      </div>
-      <div class="row">
+        <div class="row">
         <div class="col-sm-6 form-group">
           <button class="btn btn-default pull-right" type="submit">Actualizar</button>
         </div>

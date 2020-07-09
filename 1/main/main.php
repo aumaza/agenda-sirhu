@@ -139,10 +139,10 @@
    <?php
    
       if(isset($_POST['A'])){
-	      //contactos($conn);
+	      newContact();
       }
       if(isset($_POST['B'])){
-	      contactos($conn);
+	      contactos($conn,$varsession);
       }
       if(isset($_POST['C'])){
 	      loadUser($conn,$nombre);

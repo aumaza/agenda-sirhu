@@ -15,17 +15,14 @@
 	die();
 	}
 	
-	$id = $_GET['id'];
-      $sql = "SELECT * FROM usuarios WHERE id = '$id'";
-      mysqli_select_db('agenda_sirhu');
-      $resultado = mysqli_query($conn,$sql);
-      $fila = mysqli_fetch_assoc($resultado);
+	
+      
 	
 ?>
 
 <html><head>
 	<meta charset="utf-8">
-	<title>Usuarios - Editar Registro</title>
+	<title>Usuarios - Eliminar Registro</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="../../icons/actions/bookmarks-organize.png" />
 	<?php skeleton();?>
@@ -134,61 +131,49 @@ function Text(string){//validacion solo letras
 
 <div class="panel panel-info" >
   <div class="panel-heading">
-    <h2 class="panel-title text-center text-default "><span class="pull-center "><img src="../../icons/actions/user-group-new.png"  class="img-reponsive img-rounded"> Editar Usuario</h2>
+    <h2 class="panel-title text-center text-default "><span class="pull-center "><img src="../../icons/actions/list-remove.png"  class="img-reponsive img-rounded"> Eliminar Contacto</h2>
   </div>
     <div class="panel-body">
-    
-    
-     <form action="formUpdate.php" method="post">
-     <input type="hidden" id="id" name="id" value="<?php echo $fila['id']; ?>" />
-   
-         
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input id="text" type="text" class="form-control" value="<?php echo $fila['nombre']; ?>" name="nombre" value="" onkeyup="this.value=Text(this.value);" readonly required>
-  </div>
- 
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input id="text" type="text" class="form-control" name="user" onKeyDown="limitText(this,20);" onKeyUp="limitText(this,20);" value="<?php echo $fila['user']; ?>" readonly required>
-  </div>
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-    <input id="password" type="password" class="form-control" name="pass1" onKeyDown="limitText(this,15);" onKeyUp="limitText(this,15);" placeholder="Password" >
-  </div>
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-    <input  type="password" class="form-control" name="pass2" onKeyDown="limitText(this,15);" onKeyUp="limitText(this,15);" placeholder="Repita Password" >
-  </div>
-  
-   <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-question-sign"></i></span>
-  <select class="browser-default custom-select" name="permisos">
-  <option value="" disabled selected>Permisos</option>
-  <option value="1" <?php if($fila['role'] == "1") echo 'selected'; ?>>Usuario</option>
-  <option value="0" <?php if($fila['role'] == "0") echo 'selected'; ?>>Usuario Bloqueado</option>
-  </select>
-</div>
- 
- 
-  <br>
- 
- <div class="form-group">
-   <div class="col-sm-offset-2 col-sm-12" align="left">
-   <button type="submit" class="btn btn-success" name="A"><span class="glyphicon glyphicon-pencil"></span>  Cambiar Password</button>
-   <button type="submit" class="btn btn-success" name="B"><span class="glyphicon glyphicon-pencil"></span>  Cambiar Permisos</button>
-   <a href="../main/main.php"><input type="button" value="Volver al Menú Principal" class="btn btn-primary"></a>
-  </div>
-  </div>
-</form> 
-    </div>
-    <br>
-    
-    
-    
-    
-    
+	 
+	 <?php 
+	 
+	 if($conn){
+		
+		$id = $_GET['id'];
+		
+		$sql = "delete from contactos where id = '$id'";
+		
+		mysqli_select_db('agenda_sirhu');
+		$retval = mysqli_query($conn,$sql);
+		
+		if(!$retval){
+			echo '<div class="alert alert-danger" role="alert">';
+			echo 'Could not enter data: ' . mysqli_error($conn);
+			echo "</div>";
+			echo '<meta http-equiv="refresh" content="3;URL=http:nuevoRegistro.php "/>';
+			}else{
+			      echo '<div class="alert alert-success" role="alert">';
+			      echo "Registro Eliminado Exitosamente!!";
+			      echo "</div>";
+			      echo '<meta http-equiv="refresh" content="3;URL=http:../main/main.php "/>';
+			      } 
+		    
+		
+		    }else{
+			  echo '<div class="alert alert-danger" role="alert">';
+			  echo 'Could not Connect to Database: ' . mysqli_error($conn);
+			  echo '<meta http-equiv="refresh" content="3;URL=http:../main/main.php "/>';
+			  echo "</div>";
+			 }
 
+	//cerramos la conexion
+	
+	mysqli_close($conn);
+	 
+	 
+	
+	 
+	 ?>
 </div>
 </div>
 </div>

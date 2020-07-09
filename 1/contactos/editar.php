@@ -15,11 +15,8 @@
 	die();
 	}
 	
-	$id = $_GET['id'];
-      $sql = "SELECT * FROM usuarios WHERE id = '$id'";
-      mysqli_select_db('agenda_sirhu');
-      $resultado = mysqli_query($conn,$sql);
-      $fila = mysqli_fetch_assoc($resultado);
+	
+      
 	
 ?>
 
@@ -138,52 +135,17 @@ function Text(string){//validacion solo letras
   </div>
     <div class="panel-body">
     
-    
-     <form action="formUpdate.php" method="post">
-     <input type="hidden" id="id" name="id" value="<?php echo $fila['id']; ?>" />
+    <?php 
+    $id = $_GET['id'];
    
-         
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input id="text" type="text" class="form-control" value="<?php echo $fila['nombre']; ?>" name="nombre" value="" onkeyup="this.value=Text(this.value);" readonly required>
-  </div>
- 
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input id="text" type="text" class="form-control" name="user" onKeyDown="limitText(this,20);" onKeyUp="limitText(this,20);" value="<?php echo $fila['user']; ?>" readonly required>
-  </div>
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-    <input id="password" type="password" class="form-control" name="pass1" onKeyDown="limitText(this,15);" onKeyUp="limitText(this,15);" placeholder="Password" >
-  </div>
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-    <input  type="password" class="form-control" name="pass2" onKeyDown="limitText(this,15);" onKeyUp="limitText(this,15);" placeholder="Repita Password" >
-  </div>
-  
-   <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-question-sign"></i></span>
-  <select class="browser-default custom-select" name="permisos">
-  <option value="" disabled selected>Permisos</option>
-  <option value="1" <?php if($fila['role'] == "1") echo 'selected'; ?>>Usuario</option>
-  <option value="0" <?php if($fila['role'] == "0") echo 'selected'; ?>>Usuario Bloqueado</option>
-  </select>
-</div>
- 
- 
-  <br>
- 
- <div class="form-group">
-   <div class="col-sm-offset-2 col-sm-12" align="left">
-   <button type="submit" class="btn btn-success" name="A"><span class="glyphicon glyphicon-pencil"></span>  Cambiar Password</button>
-   <button type="submit" class="btn btn-success" name="B"><span class="glyphicon glyphicon-pencil"></span>  Cambiar Permisos</button>
-   <a href="../main/main.php"><input type="button" value="Volver al Menú Principal" class="btn btn-primary"></a>
-  </div>
-  </div>
-</form> 
-    </div>
-    <br>
+    if($conn){
+	   editContact($id,$conn);
+	 }else{
+	    mysqli_error($conn);
+	  }
+	  
     
+    ?>
     
     
     

@@ -1,7 +1,7 @@
 <?php include "../../connection/connection.php";
       include "../../functions/functions.php";
       
-      session_start();
+	session_start();
 	$varsession = $_SESSION['user'];
 	
 	$sql = "select nombre from usuarios where user = '$varsession'";
@@ -64,6 +64,75 @@
   });
   </script>
   <!-- END Data Table Script -->
+  
+  	  <script >
+	function limitText(limitField, limitNum) {
+       if (limitField.value.length > limitNum) {
+          
+           alert("Ha ingresado más caracteres de los requeridos, deben ser: \n" + limitNum);
+            limitField.value = limitField.value.substring(0, limitNum);
+       }
+       
+       if(limitField.value.lenght < limitNum){
+	  alert("Ha ingresado menos caracteres de los requeridos, deben ser:  \n"  + limitNum);
+            limitField.value = limitField.value.substring(0, limitNum);
+       }
+}
+</script>
+
+<script>
+function Numeros(string){
+//Solo numeros
+    var out = '';
+    var filtro = '1234567890';//Caracteres validos
+	
+    //Recorrer el texto y verificar si el caracter se encuentra en la lista de validos 
+    for (var i=0; i<string.length; i++){
+       if (filtro.indexOf(string.charAt(i)) != -1){ 
+             //Se añaden a la salida los caracteres validos
+              out += string.charAt(i);
+	     }else{
+		alert("ATENCION - Sólo se permiten Números");
+	     }
+	     }
+	
+    //Retornar valor filtrado
+    return out;
+} 
+</script>
+
+
+<script> 
+function Text(string){//validacion solo letras
+    var out = '';
+    //Se añaden las letras validas
+    var filtro ="^[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ ]+$"; // Caracteres Válidos
+	
+    for (var i=0; i<string.length; i++){
+       if (filtro.indexOf(string.charAt(i)) != -1){ 
+	     out += string.charAt(i);
+	     }else{
+		alert("ATENCION - Sólo se permite Texto");
+	     }
+	     }
+    return out;
+}
+</script>
+
+<!-- block mouse left-button   -->
+  <script>
+      $(document).bind("contextmenu",function(e) {
+    e.preventDefault();
+    });
+  </script>
+<!-- block F12 development mode -->
+  <script>
+      $(document).keydown(function(e){
+	if(e.which === 123){
+	  return false;
+	}
+    });
+  </script>
   
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -132,6 +201,7 @@
 	</form>
       </div> 
     </div>
+    
     <div class="col-sm-8 text-left"> 
       <h1>Bienvenido <?php echo $nombre ?></h1>
       <p>Desde la Aplicación Agenda-Sirhu podrá consultar los contactos como también gestionar su Calendario</p>
@@ -139,10 +209,10 @@
    <?php
    
       if(isset($_POST['A'])){
-	      //contactos($conn);
+	      newContact();
       }
       if(isset($_POST['B'])){
-	      contactos($conn);
+	      contactos($conn,$_SESSION['user']);
       }
       if(isset($_POST['C'])){
 	      usuarios($conn);
@@ -154,6 +224,7 @@
    
    
     </div>
+    
     <div class="col-sm-2 sidenav">
       <div class="well">
         <p align="left"><img class="img-reponsive img-rounded" src="../../icons/actions/meeting-attending.png" /> <strong>Usuario:</strong> <?php echo $nombre ?></p>

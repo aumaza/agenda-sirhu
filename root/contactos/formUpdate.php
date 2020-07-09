@@ -1,5 +1,5 @@
-<?php  include "../../functions/functions.php"; ?>
-<?php  include "../../connection/connection.php"; 
+<?php  include "../../functions/functions.php";
+       include "../../connection/connection.php"; 
 
 	session_start();
 	$varsession = $_SESSION['user'];
@@ -14,15 +14,14 @@
 	die();
 	}
 
-	$id = $_GET['id'];
-	
+      $id = $_GET['id'];
 
 ?>
 
 
 <html><head>
 	<meta charset="utf-8">
-	<title>Usuarios - Actualizar Registro</title>
+	<title>Nuevo Registro</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="../../icons/actions/bookmarks-organize.png" />
 	<?php skeleton();?>
@@ -47,7 +46,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        
                     </div>
                 </div>
             </div>
@@ -59,27 +57,26 @@
        
 	mysqli_select_db('agenda_sirhu');
 	  	
-	     if (isset($_POST['A'])){
-			    
+	     if (isset($_POST['A'])) {
 			    $id = mysqli_real_escape_string($conn,$_POST["id"]);
-                            $user = mysqli_real_escape_string($conn,$_POST["user"]);
-                            $pass1 = mysqli_real_escape_string($conn,$_POST["pass1"]);
-                            $pass2 = mysqli_real_escape_string($conn,$_POST["pass2"]);
+			    $nombre = mysqli_real_escape_string($conn,$_POST["nombre"]);
+                            $apellido = mysqli_real_escape_string($conn,$_POST["apellido"]);
+                            $email = mysqli_real_escape_string($conn,$_POST["email"]);
+                            $tel1 = mysqli_real_escape_string($conn,$_POST["tel1"]);
+                            $tel2 = mysqli_real_escape_string($conn,$_POST["tel2"]);
+                            $cel = mysqli_real_escape_string($conn,$_POST["movil"]);
+                            $f_nac = mysqli_real_escape_string($conn,$_POST["f_nac"]);
+                            $ofi = mysqli_real_escape_string($conn,$_POST["oficina"]);
+                            $cargo = mysqli_real_escape_string($conn,$_POST["cargo"]);
+                            $org = mysqli_real_escape_string($conn,$_POST["org"]);
+                            $dir = mysqli_real_escape_string($conn,$_POST["dir"]);
                                                         
-                             updatePass($id,$pass1,$pass2,$conn);
-                        
-
-                             }
-                             if (isset($_POST['B'])){
-					$id = mysqli_real_escape_string($conn,$_POST["id"]);
-                                        $role = mysqli_real_escape_string($conn,$_POST["permisos"]);
-                                        cambiarPermisos($id,$role,$conn);
-                                      }
-                                      }else {
-
-                                      mysqli_error($conn);
-
-                                    }
+                             updateContact($id,$nombre,$apellido,$email,$tel1,$tel2,$cel,$f_nac,$ofi,$cargo,$org,$dir,$conn);
+                            }
+                            }else{
+			      mysqli_error($conn);
+                                }
+                                    
 
   //cerramos la conexion
   

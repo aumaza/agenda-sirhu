@@ -22,7 +22,7 @@
 
 <html><head>
 	<meta charset="utf-8">
-	<title>Usuarios - Actualizar Registro</title>
+	<title>Usuarios - Actualizar Password</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="../../icons/actions/bookmarks-organize.png" />
 	<?php skeleton();?>
@@ -70,16 +70,9 @@
                         
 
                              }
-                             if (isset($_POST['B'])){
-					$id = mysqli_real_escape_string($conn,$_POST["id"]);
-                                        $role = mysqli_real_escape_string($conn,$_POST["permisos"]);
-                                        cambiarPermisos($id,$role,$conn);
-                                      }
-                                      }else {
-
-                                      mysqli_error($conn);
-
-                                    }
+                             }else {
+                                    mysqli_error($conn);
+                                   }
 
   //cerramos la conexion
   
