@@ -292,7 +292,7 @@
           <h1>Jorge Caruso</h1>
         </div>
         <div class="panel-body">
-          <p><strong>Licenciado en Recursos Humanos</strong></p>
+          <p><strong>Abogado</strong></p>
         </div>
         <div class="panel-footer">
           <h3>Cargo</h3>
