@@ -246,7 +246,7 @@
     <div class="col-sm-8">
       <h2>Sobre el Sirhu</h2>
       <h4>SIRHU - Sistema Integrado de Recursos Humanos</h4><br>
-      <p>La Dirección de Presupuesto y Gastos en Personal, lleva adelante el control y análisis de los gastos en materia de todo lo referente a gastos en personal de la Administración Central</p>
+      <p>La Dirección de Presupuesto y Evaluación Gastos en Personal, lleva adelante el control y análisis de los gastos en materia de todo lo referente a gastos en personal de la Administración Central</p>
       </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-signal logo"></span>
@@ -283,7 +283,7 @@
 <div id="pricing" class="container-fluid">
   <div class="text-center">
     <h2>Autoridades</h2>
-    <h4>Autoridades de la Dirección de Presupuesto y Gastos en Personal</h4>
+    <h4>Autoridades de la Dirección de Presupuesto y Evaluación Gastos en Personal</h4>
   </div>
   <div class="row slideanim">
     <div class="col-sm-4 col-xs-12">
