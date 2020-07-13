@@ -240,7 +240,7 @@ function Text(string){//validacion solo letras
 </div>
 
 <footer class="container-fluid text-center">
-  <p>Ministerio de Economía de la Nación - Dirección de Presupuesto y Evaluación Gastos en Personal</p>
+  <p>Ministerio de Economía de la Nación - Dirección de Presupuesto y Evaluación de Gastos en Personal</p>
 </footer>
 
 <!-- Modal -->
