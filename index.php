@@ -303,10 +303,10 @@
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel text-center">
         <div class="panel-heading">
-          <h1>Carlos Traverso</h1>
+          <h1>Carlos Enrique Traverso</h1>
         </div>
         <div class="panel-body">
-          <p><strong>Ingeniero Electrónico</strong></p>
+          <p><strong>Ingeniero Industrial</strong></p>
         </div>
         <div class="panel-footer">
           <h3>Cargo</h3>
