@@ -1,13 +1,13 @@
--- MySQL dump 10.15  Distrib 10.0.38-MariaDB, for Linux (x86_64)
+-- MariaDB dump 10.17  Distrib 10.5.6-MariaDB, for Linux (x86_64)
 --
 -- Host: localhost    Database: agenda_sirhu
 -- ------------------------------------------------------
--- Server version	10.0.38-MariaDB
+-- Server version	10.5.6-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -36,7 +36,7 @@ CREATE TABLE `contactos` (
   `organismo` varchar(70) NOT NULL,
   `direccion` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=514 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=515 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,9 +88,9 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `user` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `password` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `role` int(1) NOT NULL DEFAULT '1',
+  `role` int(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +99,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Administrador','root','proteo601',1),(2,'Augusto Maza','aumaza_mecon','slack142',1),(3,'Alejandro Ronald Krebs','akrebs_mecon','akrebs1234',1),(5,'Carlos Traverso','ctrave_mecon','ctrave1234',1),(6,'Jorge Caruso','jcarus_mecon','jcarus1234',1),(7,'Patricia Gomez','pgomez_mecon','pgomez1234',1),(9,'Sonia Boiarov','sboiarov_mecon','sboiarov1234',1),(10,'Gustavo Flores','gflore_mecon','gflore1234',1),(11,'Maria Angeles Cuquejo','mcuque_mecon','mcuque1234',1),(12,'Ezequiel Greco','egreco_mecon','egreco1234',1),(13,'Alejandra Marcelli','amarcel_mecon','amarcel1234',1),(14,'Alejandro Glavic','aglavic_mecon','aglavic1234',1),(15,'Gabriela Keienburg','gkeien_mecon','gkeien1234',1);
+INSERT INTO `usuarios` VALUES (1,'Administrador','root','proteo601',1),(2,'Augusto Maza','aumaza_mecon','slack142',1),(3,'Alejandro Ronald Krebs','akrebs_mecon','akrebs1234',1),(5,'Carlos Traverso','ctrave_mecon','ctrave1234',1),(6,'Jorge Caruso','jcarus_mecon','jcarus1234',1),(7,'Patricia Gomez','pgomez_mecon','pgomez1234',1),(9,'Sonia Boiarov','sboiarov_mecon','sboiarov1234',1),(10,'Gustavo Flores','gflore_mecon','gflore1234',1),(11,'Maria Angeles Cuquejo','mcuque_mecon','mcuque1234',1),(12,'Ezequiel Greco','egreco_mecon','egreco1234',1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -112,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-30  8:42:48
+-- Dump completed on 2020-10-31  9:46:22
